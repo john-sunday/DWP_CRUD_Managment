@@ -12,7 +12,7 @@
 <body>
 
 <h1>Customer Insertion</h1>
-<!-- 3º - mostramos formulario para agregar y enviamos datos. -->
+<!-- 3ºa - mostramos formulario para AGREGAR y enviamos datos. -->
 <form:form action="insertCustomer" modelAttribute="customer" method="POST">
 	<table id="table-1">
 

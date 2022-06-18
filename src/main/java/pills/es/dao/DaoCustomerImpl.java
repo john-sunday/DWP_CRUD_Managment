@@ -35,10 +35,19 @@ public class DaoCustomerImpl implements DaoCustomer{
 		return customers;
 	}
 
+	// 6ºa - implementamos método INSERT de la Interface.
 	@Override
 	@Transactional
 	public void insertCustomer(Customer customer) {
 		Session mySession = sessionFactory.getCurrentSession();
 		mySession.save(customer);
 	}
+	// 4ºb - implementamos método 'getCustomer(id)' de la Interface.
+	@Override
+	@Transactional
+	public Customer getCustomer(int id) {
+		Session mySession = sessionFactory.getCurrentSession();
+		return mySession.get(Customer.class, id);		
+	}
+
 }

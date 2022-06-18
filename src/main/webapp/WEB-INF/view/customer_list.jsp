@@ -24,7 +24,7 @@ We have reached the list of future customers !!!
 		<th>Modify</th>
 	</tr>
 	<c:forEach var="customer" items="${customers}">
-	
+		<!-- 1ºb - enviamos por url el parámetro id cliente. -->
 		<c:url var="updateLink" value="/customer/showUpdateForm">
 			<c:param name="customerId" value="${customer.id }"/>
 		</c:url>
@@ -38,7 +38,7 @@ We have reached the list of future customers !!!
 	</c:forEach>
 </table>
 <br>
-<!-- 1º vamos a formulario para agregar -->
-<input type="button" value="Agregate Customer" onclick="window.location.href='showAggregateForm';return false; "/>
+<!-- 1ºa -  vamos a formulario para agregar -->
+<input type="button" value="Aggregate Customer" onclick="window.location.href='showAggregateForm';return false; "/>
 </body>
 </html>
