@@ -14,6 +14,9 @@
 <h1>Customer Insertion</h1>
 <!-- 3ºa - mostramos formulario para AGREGAR y enviamos datos. -->
 <form:form action="insertCustomer" modelAttribute="customer" method="POST">
+	<!-- 5ºb -->
+	<form:hidden path="id"/>
+	
 	<table id="table-1">
 
 			<tr>
@@ -29,7 +32,7 @@
 				<td><form:input path="email"/></td>								
 			</tr>
 			<tr>
-			<td colspan="2"><input type="submit" value="Insert"/></td>
+			<td colspan="2"><input type="submit" value="Insert/Update"/></td>
 			</tr>
 	</table>
 </form:form>

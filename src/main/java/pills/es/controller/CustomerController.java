@@ -39,7 +39,7 @@ public class CustomerController {
 		// Bind customer data.
 		Customer customer = new Customer();
 		model.addAttribute("customer",customer);
-		return "customer_aggregate_form";
+		return "customer_add_update_form";
 	}	
 	// 4ºa - datos de cliente introducidos en formulario, son guardados en bbdd.
 	// 4ºa - redirigimos a la lista de clientes
@@ -60,6 +60,6 @@ public class CustomerController {
 		// Establecer el customer como atributo del modelo.
 		model.addAttribute("customer",customer);
 		// Enviar al mismo formulario que agrega.				
-		return "customer_aggregate_form";
+		return "customer_add_update_form";
 	}
 }
