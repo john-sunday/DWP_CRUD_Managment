@@ -7,6 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+										<!-- url del proyecto -> "${pageContext.request.contextPath}" -->
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css "/>
+
 </head>
 <body>
 
