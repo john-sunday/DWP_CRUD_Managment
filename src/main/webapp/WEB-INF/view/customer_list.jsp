@@ -20,12 +20,20 @@ We have reached the list of future customers !!!
 		<th>Name</th>
 		<th>Surname</th>
 		<th>Email</th>
+		
+		<th>Modify</th>
 	</tr>
 	<c:forEach var="customer" items="${customers}">
+	
+		<c:url var="updateLink" value="/customer/showUpdateForm">
+			<c:param name="customerId" value="${customer.id }"/>
+		</c:url>
 		<tr>
 			<td>${customer.name}</td>
 			<td>${customer.surname}</td>
 			<td>${customer.email}</td>
+			
+			<td><a href="${updateLink }"><input type="button" value="Modify"/></a></td>
 		</tr>
 	</c:forEach>
 </table>
