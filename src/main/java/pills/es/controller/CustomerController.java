@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pills.es.bean.entity.Customer;
@@ -27,5 +29,23 @@ public class CustomerController {
 		model.addAttribute("customers",customers);
 		
 		return "customer_list";
+	}
+	// 2º - mostramos formulario para agregar cliente.
+	@RequestMapping("/showAggregateForm")
+	public String showAggregateForm(Model model) {
+		// Bind customer data.
+		Customer customer = new Customer();
+		model.addAttribute("customer",customer);
+		return "customer_aggregate_form";
+	}
+	
+	// 4º - datos de cliente introducidos en formulario, son guardados en bbdd.
+	// 4º - redirigimos a la lista de clientes
+	// Mapping al formulario de inserción en customer_aggregate_form.jsp
+	@PostMapping("/insertCustomer")
+	public String insertCustomer(@ModelAttribute("customer") Customer customer) {
+		// Insert customer in DB.
+		daoCustomer.insertCustomer(customer);
+		return "redirect:/customer/customerList";
 	}
 }

@@ -14,8 +14,8 @@
 <body>
 
 We have reached the list of future customers !!! 
-
-<table>
+<h1>Customer List</h1>
+<table border="1">
 	<tr>
 		<th>Name</th>
 		<th>Surname</th>
@@ -29,6 +29,8 @@ We have reached the list of future customers !!!
 		</tr>
 	</c:forEach>
 </table>
-
+<br>
+<!-- 1º vamos a formulario para agregar -->
+<input type="button" value="Agregate Customer" onclick="window.location.href='showAggregateForm';return false; "/>
 </body>
 </html>

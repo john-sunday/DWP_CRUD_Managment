@@ -34,4 +34,11 @@ public class DaoCustomerImpl implements DaoCustomer{
 		 	
 		return customers;
 	}
+
+	@Override
+	@Transactional
+	public void insertCustomer(Customer customer) {
+		Session mySession = sessionFactory.getCurrentSession();
+		mySession.save(customer);
+	}
 }

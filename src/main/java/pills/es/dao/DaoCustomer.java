@@ -7,4 +7,5 @@ import pills.es.bean.entity.Customer;
 public interface DaoCustomer {
 
 	public List<Customer> getCustomers();
+	public void insertCustomer(Customer customer);
 }
