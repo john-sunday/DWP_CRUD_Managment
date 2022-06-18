@@ -18,7 +18,7 @@ We have reached the list of future customers !!!
 		<th>Surname</th>
 		<th>Email</th>
 	</tr>
-	<c:forEach items="${customers}" var="customer">
+	<c:forEach var="customer" items="${customers}">
 		<tr>
 			<td>${customer.name}</td>
 			<td>${customer.surname}</td>

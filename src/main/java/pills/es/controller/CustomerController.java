@@ -19,10 +19,11 @@ public class CustomerController {
 	private DaoCustomer daoCustomer;
 	
 	@RequestMapping("/customerList")
-	public String customerList(Model model) {
+	public String showCustomerList(Model model) {
 		// To get the customers from DAO.
 		List<Customer> customers = daoCustomer.getCustomers();
 		// Agregate the customer to model.
+		// addAttribute(key,value)
 		model.addAttribute("customers",customers);
 		
 		return "customer_list";
