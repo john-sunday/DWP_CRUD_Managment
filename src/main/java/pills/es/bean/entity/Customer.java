@@ -15,17 +15,24 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
+	/**
+	 * ERROR GRAVE:
+	 * Estuve varios días sin resolver el problema que me daba al intentar extraer de
+	 * la bbdd los valores, porque los tipos estaban definidos como 'int' cuando eran
+	 * String->varchar->name,surname y email.
+	 * Por hacer COPY/PASTE...!!
+	 */
 	@Column(name="name")
-	private int name;
+	private String name;
 	@Column(name="surname")
-	private int surname;
+	private String surname;
 	@Column(name="email")
-	private int email;
+	private String email;
 	
 	// Constructors.
 	public Customer() {
 	}
-	public Customer(int name, int surname, int email) {
+	public Customer(String name, String surname, String email) {
 		super();
 		this.name = name;
 		this.surname = surname;
@@ -38,22 +45,22 @@ public class Customer {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
-	public int getSurname() {
+	public String getSurname() {
 		return surname;
 	}
-	public void setSurname(int surname) {
+	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public int getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(int email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 	@Override

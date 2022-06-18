@@ -15,7 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Paquete de escaneo de componentes -->
-	<context:component-scan base-package="pills.es.controller" />
+	<context:component-scan base-package="pills.es" />
 
 	<!-- Conversión formateo y validación-->
 	<mvc:annotation-driven/>
@@ -30,7 +30,7 @@
     <!-- Origen BBDD y connection pool -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
-        <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/crud_order_managment?useSSL=false&amp;serverTimezone=UTC" />
         <property name="user" value="root" />
         <property name="password" value="root" /> 
@@ -48,7 +48,7 @@
 		<property name="packagesToScan" value="pills.es.bean.entity" />
 		<property name="hibernateProperties">
 		   <props>
-		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
 		      <prop key="hibernate.show_sql">true</prop>
 		   </props>
 		</property>
