@@ -11,4 +11,6 @@ public interface DaoCustomer {
 	public void insertCustomer(Customer customer);
 	// 3ºb - definimos método en Interface
 	public Customer getCustomer(int id);
+	// 3ºc
+	public void deleteCustomer(int id);
 }

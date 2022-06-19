@@ -62,4 +62,13 @@ public class CustomerController {
 		// Enviar al mismo formulario que agrega.				
 		return "customer_add_update_form";
 	}
+	//--------------------------------------------------------------------------------
+	// 2ºc
+	@GetMapping("/deleteCustomer")
+	public String deleteCustomer(@RequestParam("customerId")int id) {
+		// Eliminar el cliente.
+		daoCustomer.deleteCustomer(id);
+		// Mostrar la lista actualizada de los clientes.				
+		return "redirect:/customer/customerList";
+	}
 }

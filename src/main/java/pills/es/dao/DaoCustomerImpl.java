@@ -51,5 +51,17 @@ public class DaoCustomerImpl implements DaoCustomer{
 		Session mySession = sessionFactory.getCurrentSession();
 		return mySession.get(Customer.class, id);		
 	}
+	// 4ºc
+	@Override
+	@Transactional
+	public void deleteCustomer(int id) {
+		Session mySession = sessionFactory.getCurrentSession();
+		// Juan píldoras:
+		// Query query = mySession.createQuery("DELETE FROM Customer WHERE cusId=:id");
+		// query.setParameter("cusId",id);
+		// query.executeUpdate();
+		// My way:
+		mySession.delete(mySession.get(Customer.class,id));
+	}
 
 }
